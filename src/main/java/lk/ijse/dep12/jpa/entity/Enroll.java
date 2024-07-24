@@ -21,11 +21,11 @@ public class Enroll implements Serializable {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name = "studet_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @MapsId("studentId")
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "course_id", referencedColumnName = "code", insertable = false, updatable = false)
+    @MapsId("courseCode")
     private Course course;
 
     public Enroll(Student student, Course course, String registeredBy, Date date) {
