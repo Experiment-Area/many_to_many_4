@@ -12,7 +12,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
-public class ManyToManyDemo2 {
+public class ManyToManyDemo3 {
 
     public static void main(String[] args) {
         try(EntityManagerFactory emf = JpaUtil.getEntityManagerFactory();
@@ -25,14 +25,14 @@ public class ManyToManyDemo2 {
                 Course c002 = em.find(Course.class, "C002");
                 Course c003 = em.find(Course.class, "C003");
 
-                Student s003 = new Student("S003", "Yasitha", "Moratuwa", "078-5554401", Date.valueOf("2000-07-10"), Student.Gender.MALE);
-                Student s004= new Student("S004", "piyumi", "Kaluthara", "072-3254466", Date.valueOf("2000-07-10"), Student.Gender.FEMALE);
+                Student s005 = new Student("S005", "Buddika", "Kaduwela", "078-5554401", Date.valueOf("2000-07-10"), Student.Gender.MALE);
+                Student s006= new Student("S006", "Methmi", "Malabe", "072-3254466", Date.valueOf("2000-07-10"), Student.Gender.FEMALE);
 
-                Enroll e004 = new Enroll(s003, c002, "Banuka", Date.valueOf(LocalDate.now()));
-                Enroll e005 = new Enroll(s004, c001, "Kaveesh", Date.valueOf(LocalDate.now()));
-                Enroll e006 = new Enroll(s003, c003, "Risni", Date.valueOf(LocalDate.now()));
+                Enroll e007 = new Enroll(s006, c002, "Chathurika", Date.valueOf(LocalDate.now()));
+                Enroll e008 = new Enroll(s005, c001, "Sumudu", Date.valueOf(LocalDate.now()));
+                Enroll e009 = new Enroll(s006, c003, "Risni", Date.valueOf(LocalDate.now()));
 
-                List.of(c001, c002, c003, s003, s004, e004, e005, e006).forEach(em::persist);
+                List.of(c001, c002, c003, s005, s006, e007, e008, e009).forEach(em::persist);
 
                 tx.commit();
 
