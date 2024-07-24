@@ -7,6 +7,10 @@
 
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+    <class>lk.ijse.dep12.jpa.entity.Enroll</class>
+    <class>lk.ijse.dep12.jpa.entity.Student</class>
+    <class>lk.ijse.dep12.jpa.entity.Course</class>
+
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"></property>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:15000/dep12_jpa_many2many4"></property>

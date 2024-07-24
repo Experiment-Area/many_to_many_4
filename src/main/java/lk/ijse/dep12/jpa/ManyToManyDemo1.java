@@ -21,23 +21,18 @@ public class ManyToManyDemo1 {
             try{
                 tx.begin();
 
-//                Course c001 = new Course("C001", "CMJD", "Six Month");
-//                Course c002 = new Course("C002", "GDSE", "Three Year");
-//                Course c003 = new Course("C003", "DEP", "Six Month");
-//
-//                List.of(c001, c002,c003).forEach(em::persist);
+                Course c001 = new Course("C001", "CMJD", "Six Month");
+                Course c002 = new Course("C002", "GDSE", "Three Year");
+                Course c003 = new Course("C003", "DEP", "Six Month");
 
-                Course c001 = em.find(Course.class, "C001");
-                Course c002 = em.find(Course.class, "C002");
-
-                Student s001 = new Student("S001", "Kasun", "Galle", "011-9654427", Date.valueOf("2000-04-30"));
+                Student s001 = new Student("S001", "Kasun", "Galle", "071-5854451", Date.valueOf("2000-07-10"), Student.Gender.MALE);
+                Student s002 = new Student("S002", "Sahasra", "Panadura", "011-7854494", Date.valueOf("2000-07-10"), Student.Gender.FEMALE);
 
                 Enroll e001 = new Enroll(s001, c002, "Hansi", Date.valueOf(LocalDate.now()));
-                Enroll e002 = new Enroll(s001, c001, "Hansi", Date.valueOf(LocalDate.now()));
+                Enroll e002 = new Enroll(s002, c001, "Hansi", Date.valueOf(LocalDate.now()));
+                Enroll e003 = new Enroll(s001, c003, "Yasitha", Date.valueOf(LocalDate.now()));
 
-                em.persist(s001);
-                em.persist(e001);
-                em.persist(e002);
+                List.of(c001, c002, c003, s001, s002, e001, e002, e003).forEach(em::persist);
 
                 tx.commit();
 

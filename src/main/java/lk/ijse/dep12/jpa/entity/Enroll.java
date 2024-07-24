@@ -30,7 +30,9 @@ public class Enroll implements Serializable {
 
     public Enroll(Student student, Course course, String registeredBy, Date date) {
         this.enrollPK = new EnrollPK(student.getId(), course.getCode());
-        this.registeredBy = registeredBy;
+        this.student = student;
+        this.course = course;
         this.date = date;
+        this.registeredBy = registeredBy;
     }
 }

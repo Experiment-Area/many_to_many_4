@@ -3,7 +3,9 @@ CREATE TABLE student(
     name VARCHAR(200) NOT NULL ,
     address VARCHAR(500) NOT NULL ,
     contact VARCHAR(15) NOT NULL ,
-    dob DATE NOT NULL
+    dob DATE NOT NULL,
+    gender ENUM ('MALE', 'FEMALE') NOT NULL
+
 );
 
 CREATE TABLE course(

@@ -1,8 +1,6 @@
 package lk.ijse.dep12.jpa.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +20,10 @@ public class Student implements Serializable {
     private String address;
     private String contact;
     private Date dob;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
+    public static enum Gender {
+        MALE, FEMALE
+    }
 }
